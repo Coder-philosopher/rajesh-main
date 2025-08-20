@@ -1,15 +1,17 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
-import { services, testimonials } from "@/lib/data"
+import { testimonials,projects } from "@/lib/data"
+import Services from "@/components/services"
 
 export default function Home() {
+
   return (
     <main className="flex flex-col">
       {/* Hero Section - Full Screen */}
       <section className="relative h-screen  w-full flex items-center justify-center">
         <Image
-          src="/placeholder.svg?height=1080&width=1920"
+          src="/images/banner.jpg?height=1080&width=1920"
           alt="Interior Design Showcase"
           fill
           className="object-cover"
@@ -62,7 +64,7 @@ export default function Home() {
             </div>
             <div className="md:w-1/2 h-[500px] relative rounded-none overflow-hidden">
               <Image
-                src="/placeholder.svg?height=1000&width=800"
+                src="/images/banner3.jpg"
                 alt="Interior Design Concept"
                 fill
                 className="object-cover"
@@ -73,51 +75,8 @@ export default function Home() {
       </section>
 
       {/* Services Section with Overlapping Images */}
-      <section className="py-20 px-4 md:px-8 bg-cream-50 relative overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-sage-300/10 rounded-bl-full"></div>
-        <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-terracotta-500/5 rounded-tr-full"></div>
-
-        <div className="max-w-6xl mx-auto relative">
-          <h2 className="text-3xl md:text-5xl font-bold text-charcoal-900 mb-4 text-center">Our Services</h2>
-          <p className="text-xl text-charcoal-900/70 mb-16 text-center max-w-3xl mx-auto font-cormorant">
-            Comprehensive interior design solutions tailored to your needs
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-            {services.slice(0, 3).map((service, index) => (
-              <div key={index} className="group">
-                <div className="relative h-[300px] md:h-[400px] mb-6 overflow-hidden">
-                  <Image
-                    src={service.image || "/placeholder.svg"}
-                    alt={service.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <h3 className="text-2xl font-bold text-charcoal-900 mb-4 font-cormorant">{service.title}</h3>
-                <p className="text-charcoal-900/70 mb-6">{service.description}</p>
-                <Link
-                  href="/services"
-                  className="text-charcoal-900 font-medium border-b-2 border-gold-500 pb-1 hover:border-charcoal-900 transition-colors inline-flex items-center gap-2"
-                >
-                  Learn more <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-16 text-center">
-            <Link
-              href="/services"
-              className="bg-charcoal-900 text-white px-8 py-4 font-medium hover:bg-gold-500 transition-colors inline-flex items-center gap-2"
-            >
-              View All Services <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
+      
+      <Services />
       {/* Featured Projects - Horizontal Scroll on Mobile */}
       <section className="py-20 px-4 md:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
@@ -128,19 +87,19 @@ export default function Home() {
 
           {/* Desktop Grid */}
           <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-              <div key={item} className="portfolio-item group relative overflow-hidden h-[450px]">
+            {Object.entries(projects).map(([key, project]) => (
+              <div key={key} className="portfolio-item group relative overflow-hidden h-[450px]">
                 <Image
-                  src={`/placeholder.svg?height=900&width=600&text=Project%20${item}`}
-                  alt={`Featured Project ${item}`}
+                  src={`${project.image}`}
+                  alt={`Featured Project ${project.name}`}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="portfolio-item-content">
-                  <h3 className="text-2xl font-bold text-white font-cormorant">Modern Living Space</h3>
-                  <p className="text-white/80 mt-2 font-montserrat">Residential Design</p>
+                  <h3 className="text-2xl font-bold text-white font-cormorant">{project.name}</h3>
+                  <p className="text-white/80 mt-2 font-montserrat">{project.about}</p>
                   <Link
-                    href={`/portfolio/${item}`}
+                    href={`/portfolio/${project.no}`}
                     className="inline-block mt-4 text-gold-500 border-b border-gold-500 pb-1 hover:text-white hover:border-white transition-colors"
                   >
                     View Project
@@ -151,30 +110,32 @@ export default function Home() {
           </div>
 
           {/* Mobile Horizontal Scroll */}
-          <div className="md:hidden overflow-x-auto pb-8 -mx-4 px-4">
-            <div className="flex space-x-4" style={{ minWidth: "max-content" }}>
-              {[1, 2, 3, 4, 5, 6].map((item) => (
-                <div key={item} className="portfolio-item relative w-[280px] h-[400px] flex-shrink-0">
-                  <Image
-                    src={`/placeholder.svg?height=800&width=600&text=Project%20${item}`}
-                    alt={`Featured Project ${item}`}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="portfolio-item-content">
-                    <h3 className="text-xl font-bold text-white font-cormorant">Modern Living Space</h3>
-                    <p className="text-white/80 mt-2 font-montserrat text-sm">Residential Design</p>
-                    <Link
-                      href={`/portfolio/${item}`}
-                      className="inline-block mt-4 text-gold-500 border-b border-gold-500 pb-1 text-sm"
-                    >
-                      View Project
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+         <div className="md:hidden overflow-x-auto pb-8 -mx-4 px-4">
+  <div className="flex space-x-4" style={{ minWidth: "max-content" }}>
+    {Object.entries(projects).map(([key, project]) => (
+      <Link
+        key={key}
+        href={`/portfolio/${project.no}`}
+        className="portfolio-item relative w-[280px] h-[400px] flex-shrink-0 group"
+      >
+        <Image
+          src={project.image}
+          alt={`Featured Project ${project.no}`}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="portfolio-item-content">
+          <h3 className="text-xl font-bold text-white font-cormorant">{project.name}</h3>
+          <p className="text-white/80 mt-2 font-montserrat text-sm">{project.about}</p>
+          <span className="inline-block mt-4 text-gold-500 border-b border-gold-500 pb-1 text-sm group-hover:text-white group-hover:border-white transition-colors">
+            View Project
+          </span>
+        </div>
+      </Link>
+    ))}
+  </div>
+</div>
+
 
           <div className="mt-12 text-center">
             <Link

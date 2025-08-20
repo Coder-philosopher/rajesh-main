@@ -22,7 +22,7 @@ const cormorant = Cormorant_Garamond({
 })
 
 export const metadata: Metadata = {
-  title: "Rajesh Interior | Professional Interior Design",
+  title: "Rajesh Interior's Professional Interior Designs",
   description:
     "Transforming spaces with elegant and functional interior design solutions. Rajesh Interior specializes in residential and commercial interior design.",
     generator: 'Abdullah Shaikh'

@@ -9,7 +9,7 @@ export default function Services() {
       {/* Hero Section */}
       <section className="relative h-[50vh] md:h-[60vh] w-full mb-16">
         <Image
-          src="/placeholder.svg?height=1080&width=1920&text=Services"
+          src="/images/ser-ban.jpg?height=1080&width=1920&text=Services"
           alt="Our Services"
           fill
           className="object-cover"

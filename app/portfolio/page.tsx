@@ -1,5 +1,4 @@
 import Image from "next/image"
-import Link from "next/link"
 import { portfolioProjects } from "@/lib/data"
 
 // Portfolio categories derived from project data
@@ -11,7 +10,7 @@ export default function Portfolio() {
       {/* Hero Section */}
       <section className="relative h-[50vh] md:h-[60vh] w-full mb-16">
         <Image
-          src="/placeholder.svg?height=1080&width=1920&text=Portfolio"
+          src="/images/port-ban.jpg?height=1080&width=1920&text=Portfolio"
           alt="Portfolio Showcase"
           fill
           className="object-cover"
@@ -63,12 +62,7 @@ export default function Portfolio() {
                   <h3 className="text-2xl font-bold text-white font-cormorant">{project.title}</h3>
                   <p className="text-white/80 mt-2 font-montserrat">{project.description}</p>
                   <span className="inline-block mt-2 text-gold-500 text-sm">{project.category}</span>
-                  <Link
-                    href={`/portfolio/${project.id}`}
-                    className="inline-block mt-4 text-white border-b border-white pb-1 hover:text-gold-500 hover:border-gold-500 transition-colors"
-                  >
-                    View Project
-                  </Link>
+                 
                 </div>
               </div>
             </div>

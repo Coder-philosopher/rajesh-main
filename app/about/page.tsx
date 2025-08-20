@@ -8,7 +8,7 @@ export default function About() {
       {/* Hero Section */}
       <section className="relative h-[50vh] md:h-[60vh] w-full mb-16">
         <Image
-          src="/placeholder.svg?height=1080&width=1920&text=About"
+          src="/images/about-ban.jpg?height=1080&width=1920&text=About"
           alt="About Rajesh Interior"
           fill
           className="object-cover"
@@ -28,7 +28,7 @@ export default function About() {
         <div className="flex flex-col md:flex-row gap-16 items-center">
           <div className="md:w-1/2 h-[500px] md:h-[600px] relative overflow-hidden order-1 md:order-none">
             <Image
-              src="/placeholder.svg?height=1200&width=800&text=Rajesh"
+              src="/images/about1.jpg?height=1200&width=800&text=Rajesh"
               alt="Rajesh - Interior Designer"
               fill
               className="object-cover"
@@ -37,7 +37,7 @@ export default function About() {
           <div className="md:w-1/2">
             <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">Our Story</h2>
             <p className="text-lg text-charcoal-900/80 mb-6 leading-relaxed font-cormorant">
-              Founded in 2010 by Rajesh Kumar, Rajesh Interior has grown from a small design studio to a full-service
+              Founded in 1998 by Rajesh Mourya, Rajesh Interior has grown from a small design studio to a full-service
               interior design firm with a reputation for excellence and innovation.
             </p>
             <p className="text-lg text-charcoal-900/80 mb-6 leading-relaxed font-cormorant">
@@ -51,14 +51,14 @@ export default function About() {
             </p>
             <div className="flex items-center">
               <Image
-                src="/placeholder.svg?height=100&width=300&text=Signature"
+                src="/images/rajesh.png?height=100&width=300&text=Signature"
                 alt="Rajesh's Signature"
                 width={150}
                 height={50}
                 className="mr-4"
               />
               <div>
-                <p className="font-bold text-charcoal-900 font-cormorant text-xl">Rajesh Kumar</p>
+                <p className="font-bold text-charcoal-900 font-cormorant text-xl">Rajesh Mourya</p>
                 <p className="text-charcoal-900/70">Founder & Principal Designer</p>
               </div>
             </div>
@@ -129,35 +129,35 @@ export default function About() {
                 title: "Consultation & Discovery",
                 description:
                   "We begin by understanding your needs, preferences, and vision for the space. This initial consultation helps us establish project goals and parameters.",
-                image: "/placeholder.svg?height=600&width=800&text=Consultation",
+                image: "/images/pro1.jpg?height=600&width=800&text=Consultation",
               },
               {
                 number: "02",
                 title: "Concept Development",
                 description:
                   "Based on our discovery, we create preliminary design concepts that align with your vision, including space planning, color schemes, and material selections.",
-                image: "/placeholder.svg?height=600&width=800&text=Concept",
+                image: "/images/about2.jpg?height=600&width=800&text=Concept",
               },
               {
                 number: "03",
                 title: "Design Refinement",
                 description:
                   "We refine the chosen concept, developing detailed plans, elevations, and 3D visualizations to help you better understand the proposed design.",
-                image: "/placeholder.svg?height=600&width=800&text=Refinement",
+                image: "/images/about3.jpg?height=600&width=800&text=Refinement",
               },
               {
                 number: "04",
                 title: "Implementation",
                 description:
                   "Once the design is approved, we coordinate with contractors and vendors to bring the vision to life, overseeing every aspect of the implementation process.",
-                image: "/placeholder.svg?height=600&width=800&text=Implementation",
+                image: "/images/about4.jpg?height=600&width=800&text=Implementation",
               },
               {
                 number: "05",
                 title: "Final Reveal",
                 description:
                   "We complete the project with styling and finishing touches, ensuring every detail is perfect before the final reveal of your transformed space.",
-                image: "/placeholder.svg?height=600&width=800&text=Reveal",
+                image: "/images/about5.jpg?height=600&width=800&text=Reveal",
               },
             ].map((step, index) => (
               <div key={index} className="flex flex-col md:flex-row gap-12 items-center">
@@ -182,113 +182,7 @@ export default function About() {
       </section>
 
       {/* Team Section */}
-      <section className="px-4 md:px-8 py-24 bg-cream-100">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-center">Meet Our Team</h2>
-          <p className="text-xl text-charcoal-900/70 max-w-3xl mx-auto text-center mb-16 font-cormorant">
-            Our talented team of designers brings diverse perspectives and expertise to every project.
-          </p>
-
-          {/* Desktop Grid */}
-          <div className="hidden md:grid grid-cols-3 gap-8">
-            {[
-              {
-                name: "Rajesh Kumar",
-                role: "Founder & Principal Designer",
-                image: "/placeholder.svg?height=500&width=500&text=Rajesh",
-              },
-              {
-                name: "Priya Sharma",
-                role: "Senior Interior Designer",
-                image: "/placeholder.svg?height=500&width=500&text=Priya",
-              },
-              {
-                name: "Amit Patel",
-                role: "Project Manager",
-                image: "/placeholder.svg?height=500&width=500&text=Amit",
-              },
-              {
-                name: "Neha Gupta",
-                role: "Design Associate",
-                image: "/placeholder.svg?height=500&width=500&text=Neha",
-              },
-              {
-                name: "Vikram Singh",
-                role: "3D Visualization Specialist",
-                image: "/placeholder.svg?height=500&width=500&text=Vikram",
-              },
-              {
-                name: "Ananya Reddy",
-                role: "Client Relations Manager",
-                image: "/placeholder.svg?height=500&width=500&text=Ananya",
-              },
-            ].map((member, index) => (
-              <div key={index} className="bg-white overflow-hidden group">
-                <div className="relative h-96">
-                  <Image
-                    src={member.image || "/placeholder.svg"}
-                    alt={member.name}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold mb-1 font-cormorant">{member.name}</h3>
-                  <p className="text-charcoal-900/70">{member.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Mobile Horizontal Scroll */}
-          <div className="md:hidden overflow-x-auto pb-8 -mx-4 px-4">
-            <div className="flex space-x-6" style={{ minWidth: "max-content" }}>
-              {[
-                {
-                  name: "Rajesh Kumar",
-                  role: "Founder & Principal Designer",
-                  image: "/placeholder.svg?height=500&width=500&text=Rajesh",
-                },
-                {
-                  name: "Priya Sharma",
-                  role: "Senior Interior Designer",
-                  image: "/placeholder.svg?height=500&width=500&text=Priya",
-                },
-                {
-                  name: "Amit Patel",
-                  role: "Project Manager",
-                  image: "/placeholder.svg?height=500&width=500&text=Amit",
-                },
-                {
-                  name: "Neha Gupta",
-                  role: "Design Associate",
-                  image: "/placeholder.svg?height=500&width=500&text=Neha",
-                },
-                {
-                  name: "Vikram Singh",
-                  role: "3D Visualization Specialist",
-                  image: "/placeholder.svg?height=500&width=500&text=Vikram",
-                },
-                {
-                  name: "Ananya Reddy",
-                  role: "Client Relations Manager",
-                  image: "/placeholder.svg?height=500&width=500&text=Ananya",
-                },
-              ].map((member, index) => (
-                <div key={index} className="bg-white overflow-hidden group w-[280px] flex-shrink-0">
-                  <div className="relative h-80">
-                    <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-1 font-cormorant">{member.name}</h3>
-                    <p className="text-charcoal-900/70 text-sm">{member.role}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* CTA Section */}
       <section className="px-4 md:px-8 py-24">

@@ -43,7 +43,7 @@ export default function Contact() {
       {/* Hero Section */}
       <section className="relative h-[50vh] md:h-[60vh] w-full mb-16">
         <Image
-          src="/placeholder.svg?height=1080&width=1920&text=Contact"
+          src="/images/about-ban.jpg?height=1080&width=1920&text=Contact"
           alt="Contact Rajesh Interior"
           fill
           className="object-cover"
